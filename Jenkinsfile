@@ -20,7 +20,7 @@ pipeline {
                                                  passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh """
                     echo "Logging in to Docker Hub..."
-                    docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+                    decho $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
                     echo "Building Docker image..."
                     docker build -t ${DOCKER_HUB_REPO}:${IMAGE_TAG} .
                     echo "Pushing Docker image to Docker Hub..."
