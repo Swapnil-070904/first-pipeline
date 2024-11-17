@@ -51,4 +51,3 @@ pipeline {
             cleanWs() // Cleanup the workspace after job completion
         }
     }
-}
