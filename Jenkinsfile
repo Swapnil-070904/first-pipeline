@@ -45,9 +45,11 @@ pipeline {
                 }
         }
     }
+    }
 
     post {
         always {
             cleanWs() // Cleanup the workspace after job completion
         }
     }
+}
